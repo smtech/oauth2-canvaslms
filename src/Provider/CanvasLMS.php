@@ -8,6 +8,7 @@ use League\OAuth2\Client\Token\AccessToken;
 use League\OAuth2\Client\Tool\ArrayAccessorTrait;
 use League\OAuth2\Client\Tool\BearerAuthorizationTrait;
 use Psr\Http\Message\ResponseInterface;
+use smtech\OAuth2\Client\Provider\CanvasLMSResourceOwner;
 
 class CanvasLMS extends AbstractProvider {
 
