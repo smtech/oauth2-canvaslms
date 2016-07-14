@@ -1,0 +1,20 @@
+{
+    "name": "smtech/oauth2-canvaslms",
+    "description": "Canvas LMS OAuth 2.0 support for the PHP League's OAuth 2.0 Client",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Seth Battis",
+            "email": "sethbattis@stmarksschool.org"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.0",
+        "league/oauth2-client": "~1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "smtech\\OAuth2\\Client\\": "src"
+        }
+    }
+}
