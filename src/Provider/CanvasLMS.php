@@ -35,6 +35,8 @@ class CanvasLMS extends AbstractProvider
     protected $grantType;
     /* TODO https://github.com/smtech/oauth2-canvaslms/issues/1 */
 
+    protected $scopes = [];
+
     protected function getAuthorizationParameters(array $options)
     {
         $options = parent::getAuthorizationParameters($options);
@@ -59,7 +61,7 @@ class CanvasLMS extends AbstractProvider
 
     public function getDefaultScopes()
     {
-        return [];
+        return $this->scopes;
     }
 
     public function checkResponse(ResponseInterface $response, $data)
@@ -79,5 +81,13 @@ class CanvasLMS extends AbstractProvider
         $request = parent::getAccessTokenRequest($params);
         $uri = $request->getUri()->withUserInfo($this->clientId, $this->clientSecret);
         return $request->withUri($uri);
+    }
+
+    protected function getScopeSeparator()
+    {
+        if (!isset($this->scopeSeparator)) {
+            $this->scopeSeparator = ' ';
+        }
+        return $this->scopeSeparator;
     }
 }
